@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>STRING TUNER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="brand-dot"></div>
+        <span class="brand-name">STRING TUNER</span>
+        <span class="brand-model">ST-440</span>
+      </div>
+      <div class="power-indicator" id="powerIndicator">
+        <span class="dot"></span>
+        <span>STANDBY</span>
+      </div>
+    </header>
+
+    <!-- ① MAIN DISPLAY — top -->
+    <section class="display-section">
+
+      <!-- Frequency readout -->
+      <div class="freq-display">
+        <div class="freq-value" id="freqValue">---</div>
+        <div class="freq-unit">Hz</div>
+      </div>
+
+      <!-- Note name -->
+      <div class="note-display">
+        <span class="note-name" id="noteName">·</span>
+        <span class="note-octave" id="noteOctave"></span>
+      </div>
+
+      <!-- Cents meter -->
+      <div class="meter-container">
+        <div class="meter-labels">
+          <span>-50</span><span>-25</span>
+          <span class="center-label">0</span>
+          <span>+25</span><span>+50</span>
+        </div>
+        <div class="meter-track">
+          <div class="meter-needle" id="meterNeedle"></div>
+          <div class="meter-center-mark"></div>
+        </div>
+        <div class="meter-status" id="meterStatus">— WAITING FOR SIGNAL —</div>
+      </div>
+
+      <!-- Pitch feedback -->
+      <div class="pitch-feedback">
+        <div class="feedback-arrow" id="arrowFlat">▼ FLATTEN</div>
+        <div class="feedback-ok" id="feedbackOk">■ IN TUNE</div>
+        <div class="feedback-arrow" id="arrowSharp">▲ TIGHTEN</div>
+      </div>
+
+    </section>
+
+    <!-- ② MIC BUTTON -->
+    <section class="mic-section">
+      <button class="mic-btn" id="micBtn">
+        <span class="mic-icon">◉</span>
+        <span class="mic-label" id="micLabel">TAP TO TUNE</span>
+      </button>
+    </section>
+
+    <!-- Signal level -->
+    <div class="signal-bar-container">
+      <span class="signal-label">SIG</span>
+      <div class="signal-bar-track">
+        <div class="signal-bar" id="signalBar"></div>
+      </div>
+    </div>
+
+    <!-- ③ STRING SELECTOR -->
+    <section class="section string-section">
+      <label class="section-label">STRING — <span id="autoDetectLabel">AUTO DETECT</span></label>
+      <div class="string-buttons" id="stringButtons">
+        <!-- filled by JS -->
+      </div>
+      <div class="auto-hint" id="autoHint">tap to lock on a string</div>
+    </section>
+
+    <!-- ④ SETTINGS: instrument + tuning -->
+    <section class="section instrument-section">
+      <label class="section-label">INSTRUMENT</label>
+      <div class="instrument-buttons">
+        <button class="inst-btn active" data-instrument="guitar">GUITAR</button>
+        <button class="inst-btn" data-instrument="ukulele">UKULELE</button>
+      </div>
+    </section>
+
+    <section class="section tuning-section">
+      <label class="section-label">TUNING</label>
+      <div class="tuning-buttons" id="tuningButtons">
+        <!-- filled by JS -->
+      </div>
+    </section>
+
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
