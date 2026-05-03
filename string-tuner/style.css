@@ -460,33 +460,28 @@ header {
 }
 /* ─── FOOTER ─────────────────────────────────────── */
 .app-footer {
-  padding: 20px 16px 24px;
+  padding: 16px 20px 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 12px;
   border-top: 1px solid var(--border);
   margin-top: auto;
 }
 
-/* Logo placeholder — 1:1 square, replace with SVG */
 .footer-logo {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border2);
-  border-radius: 2px;
-  background: var(--surface);
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
-  /* visual hint that it's a placeholder */
-  position: relative;
+  opacity: 0.6;
+  border-radius: 2px;
 }
+
 .footer-credits {
   font-size: 9px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.10em;
   color: var(--text-faint);
-  text-align: center;
   line-height: 1.7;
-  max-width: 280px;
 }
 
 .footer-highlight {
